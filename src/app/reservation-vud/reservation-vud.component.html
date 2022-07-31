@@ -1,0 +1,40 @@
+<div class="container">
+
+<div class="res-vud-form">
+    <h3>View/Update/Delete Reservation Details</h3>
+    <label for="reservation-id">Reeservation Id: </label>
+    <input type="text" id="reservation-id" >
+    <button >Submit</button>
+</div>
+
+
+<div class="res-vud-details">
+    <button>Edit</button><button>Delete</button>
+    <div class="res-details">
+        <table>
+            <tr>
+                <td>Reservation</td><td>{{reservation!.id}}</td>
+            </tr>
+            <tr>
+                <td>Checkin Date</td><td>{{reservation!.checkin}}</td>
+            </tr>
+            <tr>
+                <td>Checkout Date</td><td>{{reservation!.checkout}}</td>
+            </tr>
+            <tr><!-- TODO CHANGE TO ROOMTYPE -->
+                <td>Hotel Room</td><td>{{reservation!.roomnumber}}</td>
+            </tr>
+            <tr>
+                <td>Name</td><td>{{reservation!.user!.firstName}} {{reservation!.user!.lastName}}</td>
+            </tr>
+            <tr>
+                <td>Email</td><td>{{reservation!.user!.email}}</td>
+            </tr>
+            <tr>
+                <td>Name</td><td>{{reservation!.user!.phonenumber}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</div>
