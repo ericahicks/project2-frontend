@@ -1,5 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../models/reservation';
+import { User } from '../models/user';
+import { ReservationService } from '../reservation.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-reservation-vud',
@@ -9,10 +13,24 @@ import { Reservation } from '../models/reservation';
 export class ReservationVudComponent implements OnInit {
 
   reservation: Reservation = new Reservation();
+  reservations?: Reservation;
+  users: User[];
 
-  constructor() { }
+  constructor(private reservationService: ReservationService, private userService: UserService) { 
+    this.users = []; 
+  }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getReservations(): void {
+    // this.reservations = this.reservationService.getReservations();
+  }
+
+  getUsers(): void {
+    // this.userService.getUsers().subscribe(data => this.users = data);
+    this.userService.getUsers().subscribe(data => this.users = data);
   }
 
 }
