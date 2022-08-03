@@ -1,0 +1,29 @@
+<h2>Update Your Reservation Information</h2>
+<div class="card" *ngIf="theReservation && theReservation.reservationId">
+<table class="container"  >
+    <tr>
+        <td><label for="id">Reservation</label></td><td><input id="id" [value]="theReservation.reservationId" /></td>
+    </tr>
+    <tr>
+        <td><label for="checkin">Checkin Date</label></td><td><input id="checkin" [value]="theReservation.checkin" /></td>
+    </tr>
+    <tr>
+        <td><label for="checkout">Checkout Date</label></td><td><input id="checkout" [value]="theReservation.checkout" /></td>
+    </tr>
+    <tr><!-- TODO CHANGE TO ROOMTYPE -->
+        <td><label for="roomnumber">Hotel Room</label></td><td><input id="roomnumber" [value]="theReservation.roomnumber" /></td>
+    </tr>
+    <tr>
+        <td><label for="fullName">Name</label></td><td><input id="fullName" [value]="theReservation.firstName + '' + theReservation.lastName" /></td>
+    </tr>
+    <tr>
+        <td>Email</td><td><input disabled id="email" [value]="theReservation.email" /></td>
+    </tr>
+    <tr>
+        <td>Phone Number</td><td><input id="phonenumber" [value]="theReservation.phonenumber" /></td>
+    </tr>
+</table>
+
+<button>Update</button><button (click)="reset()">Cancel</button>
+
+</div>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../models/reservation';
-import { ReesrvationInfoDto } from '../models/reservation-info-dto';
+import { ResrvationInfoDto } from '../models/reservation-info-dto';
 import { User } from '../models/user';
 import { ReservationService } from '../reservation.service';
 import { UserService } from '../user.service';
@@ -13,9 +13,10 @@ import { UserService } from '../user.service';
 })
 export class ReservationVudComponent implements OnInit {
 
-  theReservation?: ReesrvationInfoDto;
-  resrvationInfoDto?: ReesrvationInfoDto[];
-  users: User[];
+  theReservation?: ResrvationInfoDto; // hold reservation found by id
+  resrvationInfoDto?: ResrvationInfoDto[]; // holds reservations found by email
+  selectedReservation?: ResrvationInfoDto; // holds reservation selected to edit or delete
+  users: User[]; // not used, testing purposees only
 
   constructor(private reservationService: ReservationService, private userService: UserService) { 
     this.users = []; 
@@ -47,10 +48,8 @@ export class ReservationVudComponent implements OnInit {
 
   clear() {
     this.resrvationInfoDto = undefined;
-  }
-
-  clearResById() {
     this.theReservation = undefined;
+    this.selectedReservation = undefined;
   }
 
 }

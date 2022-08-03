@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Reservation } from './models/reservation';
-import { ReesrvationInfoDto } from './models/reservation-info-dto';
+import { ResrvationInfoDto } from './models/reservation-info-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +12,27 @@ import { ReesrvationInfoDto } from './models/reservation-info-dto';
 export class ReservationService {
 
   baseUrl: string = environment.apiURL;
-  apiUrl: string = "/reservations"
+  apiUrl: string = "/reservations/"
 
   constructor(private http: HttpClient) { }
 
-   getReservations(): Observable<ReesrvationInfoDto[]> {
-      return this.http.get<ReesrvationInfoDto[]>(this.baseUrl + this.apiUrl)
+   getReservations(): Observable<ResrvationInfoDto[]> {
+      return this.http.get<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl)
    }
 
-   getReservationById(id: string): Observable<ReesrvationInfoDto> {
-     return this.http.get<ReesrvationInfoDto>(this.baseUrl + this.apiUrl + "/" + id);
+   getReservationById(id: string): Observable<ResrvationInfoDto> {
+     return this.http.get<ResrvationInfoDto>(this.baseUrl + this.apiUrl +  id);
    }
 
-   getReservationsByEmail(email: string): Observable<ReesrvationInfoDto[]> {
-    return this.http.post<ReesrvationInfoDto[]>(this.baseUrl + this.apiUrl + "/user", email);
+   getReservationsByEmail(email: string): Observable<ResrvationInfoDto[]> {
+    return this.http.post<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl + "user", email);
+   }
+
+   updateReservation(theReservation: ResrvationInfoDto): Observable<ResrvationInfoDto> {
+    return this.http.put<ResrvationInfoDto>(this.baseUrl + this.apiUrl + theReservation.reservationId, theReservation);
+   }
+
+   deleteReservation(id: number): void {
+    this.http.delete(this.baseUrl + this.apiUrl + id);
    }
 }

@@ -1,4 +1,4 @@
-export class ReesrvationInfoDto {
+export class ResrvationInfoDto {
 
     reservationId: number;
     roomnumber: number;
