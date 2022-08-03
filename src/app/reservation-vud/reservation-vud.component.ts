@@ -12,16 +12,18 @@ import { UserService } from '../user.service';
 })
 export class ReservationVudComponent implements OnInit {
 
-  reservation: Reservation = new Reservation();
-  reservations?: Reservation;
+  reservation?: Reservation;
+  reservations?: Reservation[];
   users: User[];
 
   constructor(private reservationService: ReservationService, private userService: UserService) { 
     this.users = []; 
+    this.reservations = [];
   }
 
   ngOnInit(): void {
     this.getUsers();
+    this.getReservations();
   }
 
   getReservations(): void {
