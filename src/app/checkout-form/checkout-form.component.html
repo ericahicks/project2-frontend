@@ -1,6 +1,6 @@
 <p>checkout-form works!</p>
 <div class="row">
-    <div class="col-55">
+    <div class="col-60">
       <div class="container">
         <form action="/action_page.php">
   
@@ -10,17 +10,26 @@
               <label for="fname"><i class="fa fa-user"></i> Full Name</label>
               <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
-              <input type="text" id="email" name="email" placeholder="john@example.com">
+              <input type="text" id="email" name="email" placeholder="john@example.com" >
              
               <div class="row">
               
                 <div class="col-50">
-                  <label for="phonenumber">Phone Number</label>
+                  <label for="phonenumber"> Phone Number </label>
                   <input type="text" id="zip" name="phonenumber" placeholder="+1-973-xxx-xxx">
+
+                  <label for="roomtype">RoomType</label>
+                  <input type="text" id="roomtype" name="roomtype" placeholder="Queen 2 Beds" [disabled]="true">
+
+                  <label for="checkin">Checkin Date</label>
+                  <input type="text" id="checkin" name="checkin" placeholder="2022-08-01" [disabled]="true">
+
+                  <label for="checkout">Checkout Date</label>
+                  <input type="text" id="checkout" name="checkout" placeholder="2022-08-08" [disabled]="true">
                 </div>
               </div>
             </div>
-  
+            <!--
             <div class="col-50">
               <h3>Payment</h3>
               <label for="fname">Accepted Cards</label>
@@ -48,6 +57,7 @@
                 </div>
               </div>
             </div>
+          -->
   
           </div>
           <label>
