@@ -31,28 +31,31 @@
 <div class="res-vud-details">
     <button>Edit</button><button>Delete</button>
     <div class="res-details">
-        <table>
+        <table *ngFor="let reservation of reservations" >
+            <span>{{reservation}}</span>
             <tr>
-                <td>Reservation</td><td>{{reservation!.id}}</td>
+                <td>Reservation</td><td>{{reservation.id}}</td>
             </tr>
             <tr>
-                <td>Checkin Date</td><td>{{reservation!.checkin}}</td>
+                <td>Checkin Date</td><td>{{reservation.checkin}}</td>
             </tr>
             <tr>
-                <td>Checkout Date</td><td>{{reservation!.checkout}}</td>
+                <td>Checkout Date</td><td>{{reservation.checkout}}</td>
             </tr>
             <tr><!-- TODO CHANGE TO ROOMTYPE -->
-                <td>Hotel Room</td><td>{{reservation!.roomnumber}}</td>
+                <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
             </tr>
+            <ng-container *ngIf="reservation.user" >
             <tr>
-                <td>Name</td><td>{{reservation!.user!.firstName}} {{reservation!.user!.lastName}}</td>
+                <!--<td>Name</td><td>{{reservation!.user!.firstName}} {{reservation!.user!.lastName}}</td>-->
             </tr>
             <tr>
                 <td>Email</td><td>{{reservation!.user!.email}}</td>
             </tr>
             <tr>
-                <td>Name</td><td>{{reservation!.user!.phonenumber}}</td>
+                <td>Name</td><td>{{reservation.user.phonenumber}}</td>
             </tr>
+            </ng-container>
         </table>
     </div>
 </div>
