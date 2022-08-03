@@ -1,8 +1,8 @@
 <div class="container">
-
+<!-- User Table for Testing 
 <div class="testing">
     <h1>Users Testing CORS Filter</h1>
-    <table>
+    <table id="customers">
         <tr>
             <th>Userid</th>
             <th>First Name</th>
@@ -19,44 +19,84 @@
         </tr>
     </table>
 </div>
+-->
 
 <div class="res-vud-form">
-    <h3>View/Update/Delete Reservation Details</h3>
-    <label for="reservation-id">Reeservation Id: </label>
-    <input type="text" id="reservation-id" >
-    <button >Submit</button>
+    <h1>View Existing Reservations</h1>
+    <label for="reservation-id">Reservation Id: </label>
+    <input type="text" id="reservation-id" #resid placeholder="Try 19">
+    <button (click)="getReservationById(resid.value); resid.value='';" >Submit</button>
+    <button (click)="clearResById()">Reset</button>
+
+    <label class="px-3" for="email">Email: </label>
+    <input type="text" id="email" #email placeholder="Try msjakeway@yahoo.com">
+    <button (click)="getReservationsByEmail(email.value); email.value='';">Submit</button>
+    <button (click)="clear()">Reset</button>
 </div>
 
+<div class="res-vud-details">
+    <div class="res-details">
+            <div class="card card-blue" *ngIf="theReservation && theReservation.reservationId">
+                <div class="btn-group fl-right">
+                    <button>x</button>
+                </div>
+            <table class="container"  >
+                <tr>
+                    <td>Reservation</td><td>{{theReservation.reservationId}}</td>
+                </tr>
+                <tr>
+                    <td>Checkin Date</td><td>{{theReservation.checkin}}</td>
+                </tr>
+                <tr>
+                    <td>Checkout Date</td><td>{{theReservation.checkout}}</td>
+                </tr>
+                <tr><!-- TODO CHANGE TO ROOMTYPE -->
+                    <td>Hotel Room</td><td>{{theReservation.roomnumber}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td><td>{{theReservation.firstName}} {{theReservation.lastName}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td><td>{{theReservation.email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td><td>{{theReservation.phonenumber}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 
 <div class="res-vud-details">
-    <button>Edit</button><button>Delete</button>
     <div class="res-details">
-        <table *ngFor="let reservation of reservations" >
-            <span>{{reservation}}</span>
-            <tr>
-                <td>Reservation</td><td>{{reservation.id}}</td>
-            </tr>
-            <tr>
-                <td>Checkin Date</td><td>{{reservation.checkin}}</td>
-            </tr>
-            <tr>
-                <td>Checkout Date</td><td>{{reservation.checkout}}</td>
-            </tr>
-            <tr><!-- TODO CHANGE TO ROOMTYPE -->
-                <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
-            </tr>
-            <ng-container *ngIf="reservation.user" >
-            <tr>
-                <!--<td>Name</td><td>{{reservation!.user!.firstName}} {{reservation!.user!.lastName}}</td>-->
-            </tr>
-            <tr>
-                <td>Email</td><td>{{reservation!.user!.email}}</td>
-            </tr>
-            <tr>
-                <td>Name</td><td>{{reservation.user.phonenumber}}</td>
-            </tr>
-            </ng-container>
-        </table>
+            <div class="card" *ngFor="let reservation of resrvationInfoDto">
+                <div class="btn-group fl-right">
+                    <button>x</button>
+                </div>
+            <table class="container">
+                <tr>
+                    <td>Reservation</td><td>{{reservation.reservationId}}</td>
+                </tr>
+                <tr>
+                    <td>Checkin Date</td><td>{{reservation.checkin}}</td>
+                </tr>
+                <tr>
+                    <td>Checkout Date</td><td>{{reservation.checkout}}</td>
+                </tr>
+                <tr><!-- TODO CHANGE TO ROOMTYPE -->
+                    <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td><td>{{reservation.firstName}} {{reservation.lastName}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td><td>{{reservation.email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td><td>{{reservation.phonenumber}}</td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 
