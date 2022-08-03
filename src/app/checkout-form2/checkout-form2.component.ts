@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-checkout-form2',
@@ -8,9 +8,22 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class CheckoutForm2Component implements OnInit {
 
-  constructor() { }
+  checkoutForm = this.formBuilder.group({
+    name: '',
+    email: ''
+  });
+
+  constructor(
+    private formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
+  }
+  onSubmit(): void {
+    // Process checkout data here
+    //this.items = this.reservationsService.clearCart();
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.checkoutForm.reset();
   }
 
 }
