@@ -15,14 +15,14 @@
             <td>{{user.firstName}}</td>
             <td>{{user.lastName}}</td>
             <td>{{user.email}}</td>
-            <td>{{user.phonenumber}}</td>
+            <td>{{user.number}}</td>
         </tr>
     </table>
 </div>
 
 <div class="res-vud-form">
     <h3>View/Update/Delete Reservation Details</h3>
-    <label for="reservation-id">Reeservation Id: </label>
+    <label for="reservation-id">Reservation Id: </label>
     <input type="text" id="reservation-id" >
     <button >Submit</button>
 </div>
@@ -34,7 +34,7 @@
         <table *ngFor="let reservation of reservations" >
             <span>{{reservation}}</span>
             <tr>
-                <td>Reservation</td><td>{{reservation.id}}</td>
+                <td>Reservation</td><td>{{reservation.reservationId}}</td>
             </tr>
             <tr>
                 <td>Checkin Date</td><td>{{reservation.checkin}}</td>
@@ -45,15 +45,15 @@
             <tr><!-- TODO CHANGE TO ROOMTYPE -->
                 <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
             </tr>
-            <ng-container *ngIf="reservation.user" >
+            <ng-container *ngIf="reservation.users" >
             <tr>
                 <!--<td>Name</td><td>{{reservation!.user!.firstName}} {{reservation!.user!.lastName}}</td>-->
             </tr>
             <tr>
-                <td>Email</td><td>{{reservation!.user!.email}}</td>
+                <td>Email</td><td>{{reservation!.users!.email}}</td>
             </tr>
             <tr>
-                <td>Name</td><td>{{reservation.user.phonenumber}}</td>
+                <td>Name</td><td>{{reservation.users.number}}</td>
             </tr>
             </ng-container>
         </table>
