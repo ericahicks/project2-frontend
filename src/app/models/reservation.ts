@@ -1,11 +1,11 @@
 import { User } from "./user";
 
 export class Reservation {
-    reservationId: number;
-    roomnumber: number;
-    users: User;
-    checkin: Date;
-    checkout: Date;
+    reservationId?: number;
+    roomnumber?: number;
+    users?: User;
+    checkin?: Date;
+    checkout?: Date;
 
 
     constructor (reservationId: number = 0, users: User = new User(), roomnumber: number = 100,
