@@ -6,8 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReservationVudComponent } from './reservation-vud/reservation-vud.component';
 import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutForm2Component } from './checkout-form2/checkout-form2.component';
+import { SaveUserComponent } from './save-user/save-user.component';
+
+
+
+
 
 
 @NgModule({
@@ -16,12 +21,13 @@ import { CheckoutForm2Component } from './checkout-form2/checkout-form2.componen
     ReservationVudComponent,
     CheckoutFormComponent,
     CheckoutForm2Component,
+    SaveUserComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, ReactiveFormsModule,
+    HttpClientModule, ReactiveFormsModule, FormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
