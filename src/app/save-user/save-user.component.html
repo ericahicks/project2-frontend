@@ -1,3 +1,59 @@
 
 <p>save-user works!</p>
-<button (click)="postUser()" type="button" class="btn btn-warning float-end">Submit</button>
+<div>
+    <h2>Save User</h2>
+    <form (ngSubmit)="postUser(); saveUserForm.reset(); " id =" new-user" #saveUserForm>
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input 
+            [(ngModel)]="saveNewUser.firstName" 
+            name="firstname" 
+            class="form-control" 
+            id="firstname" 
+            type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input
+            [(ngModel)]="saveNewUser.lastName"  
+            name="lastname" 
+            class="form-control" 
+            id="lastname" 
+            type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label for="number">Phone Number</label>
+            <input 
+            [(ngModel)]="saveNewUser.number"  
+            name="number" 
+            class="form-control" 
+            id="number" 
+            type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+            [(ngModel)]="saveNewUser.email"  
+            name="email"
+            class="form-control" 
+            id="email" 
+            type="text"
+            />
+        </div>
+        <div>
+            <input class="btn btn primary submit-button" type="submit" value="Save" />
+        </div>
+    </form>
+</div>
+
+
+<!--    id: number;
+    firstName: string;
+    lastName: string;
+    number: string;
+    email: string;
+    <button (click)="postUser()" type="button" class="btn btn-warning float-end">Submit</button>
+-->
