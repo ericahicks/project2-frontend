@@ -36,7 +36,7 @@ export class ReservationVudComponent implements OnInit {
   }
 
   getReservations(): void {
-    this.reservationService.getReservations().subscribe(data => this.resrvationInfoDto = data);
+    this.reservationService.getReservationsInfo().subscribe(data => this.resrvationInfoDto = data);
   }
 
   getUsers(): void {
