@@ -10,6 +10,7 @@ import { CheckoutForm2Component } from './checkout-form2/checkout-form2.componen
 import { ListUserComponent } from './list-user/list-user.component';
 import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
 import { SaveUserComponent } from './save-user/save-user.component';
+import { ReservationVudComponent } from './reservation-vud/reservation-vud.component';
 
 const routes: Routes = [
   {
@@ -21,11 +22,13 @@ const routes: Routes = [
   },{
     path: 'viewusers', component: ListUserComponent
   },{
-    path: 'vuds', component: ReservationVudsComponent
+    path: 'vuds', component: ReservationVudsComponent // Amir's save reservation to db 
   },{ 
-    path: 'update-reservation', component: ReservationUpdateComponent
+    path: 'reservations/update', component: ReservationUpdateComponent
   },{ 
-    path: 'existing-reservations',  component: ReservationsListComponent
+    path: 'reservations/view',  component: ReservationsListComponent
+  },{
+    path: 'reservations', component: ReservationVudComponent // Erica's view existing reservations
   },{ 
     path: '**', component: NothingToShowComponent
   }

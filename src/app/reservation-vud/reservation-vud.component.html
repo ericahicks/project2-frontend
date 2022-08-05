@@ -23,7 +23,7 @@
 
 <div class="res-vud-form">
     <h1>View Existing Reservations</h1>
-    <label for="reservation-id">Reservation Id: </label>
+    <label for="reservation-id">Reservation Number: </label>
     <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
     <button (click)="getReservationById(resid.value); resid.value='';clear();" >Submit</button>
     <button (click)="clear();resid.value='';">Reset</button>
