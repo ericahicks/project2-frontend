@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutForm2Component } from './checkout-form2/checkout-form2.component';
 import { SaveUserComponent } from './save-user/save-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
 
 
 
@@ -24,6 +25,7 @@ import { ListUserComponent } from './list-user/list-user.component';
     CheckoutForm2Component,
     SaveUserComponent,
     ListUserComponent,
+    ReservationVudsComponent,
 
   ],
   imports: [
