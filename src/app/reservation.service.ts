@@ -12,7 +12,8 @@ import { ResrvationInfoDto } from './models/reservation-info-dto';
 export class ReservationService {
 
   baseUrl: string = environment.apiURL;
-  apiUrl: string = "/reservations/"
+  apiUrl: string = "/reservations"
+  createreservation = "/createreservation"
 
   constructor(private http: HttpClient) { }
 
@@ -21,19 +22,22 @@ export class ReservationService {
    }
 
    getReservationById(id: string): Observable<ResrvationInfoDto> {
-     return this.http.get<ResrvationInfoDto>(this.baseUrl + this.apiUrl +  id);
+     return this.http.get<ResrvationInfoDto>(this.baseUrl + this.apiUrl + "/" + id);
    }
 
    getReservationsByEmail(email: string): Observable<ResrvationInfoDto[]> {
-    return this.http.post<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl + "user", email);
+    return this.http.post<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl + "/user", email);
    }
 
    updateReservation(theReservation: ResrvationInfoDto): Observable<ResrvationInfoDto> {
     console.log("hi I'm the reservation service - gotcha. updating the reservation");
-    return this.http.put<ResrvationInfoDto>(this.baseUrl + this.apiUrl + theReservation.reservationId, theReservation);
+    return this.http.put<ResrvationInfoDto>(this.baseUrl + this.apiUrl + "/" + theReservation.reservationId, theReservation);
    }
 
    deleteReservation(id: number): void {
     this.http.delete(this.baseUrl + this.apiUrl + id);
    }
+   postReservation(reservation:Reservation): Observable<Reservation>{
+    return this.http.post<Reservation>(this.baseUrl + this.apiUrl +this.createreservation, reservation)
+   } 
 }

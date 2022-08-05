@@ -10,6 +10,13 @@ import { ReservationsListComponent } from './reservations-list/reservations-list
 import { ReservationCardComponent } from './reservation-card/reservation-card.component';
 import { ReservationUpdateComponent } from './reservation-update/reservation-update.component';
 import { NothingToShowComponent } from './nothing-to-show/nothing-to-show.component';
+import { CheckoutFormComponent } from './checkout-form/checkout-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CheckoutForm2Component } from './checkout-form2/checkout-form2.component';
+import { SaveUserComponent } from './save-user/save-user.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +25,19 @@ import { NothingToShowComponent } from './nothing-to-show/nothing-to-show.compon
     ReservationsListComponent,
     ReservationCardComponent,
     ReservationUpdateComponent,
-    NothingToShowComponent
+    NothingToShowComponent,
+    CheckoutFormComponent,
+    CheckoutForm2Component,
+    SaveUserComponent,
+    ListUserComponent,
+    ReservationVudsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

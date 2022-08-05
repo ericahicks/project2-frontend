@@ -1,0 +1,44 @@
+<p>checkout-form2 works!</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+  
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+    <div>
+        <label for="address">
+          Email
+        </label>
+        <input id="address" type="text" formControlName="address">
+      </div>
+      <div>
+        <label for="address">
+          RoomType
+        </label>
+        <input id="roomType" type="text" formControlName="roomtype" [disabled]="true">
+      </div>
+      <div>
+        <label for="address">
+          Checkin
+        </label>
+        <input id="checkin" type="text" formControlName="checkin" ng-disabled="true">
+      </div>
+      <div>
+        <label for="address">
+          Checkout
+        </label>
+        <input id="checkout" type="text" formControlName="checkout" ng-disabled="true">
+      </div>
+  
+    <button class="button" type="submit">Make Reservation</button>
+  
+  </form>

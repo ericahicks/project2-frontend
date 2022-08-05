@@ -1,0 +1,118 @@
+<!-- <p>reservation-vuds works!</p>
+<div class="container">
+    <p>list-user works!</p>
+    <div id="users-list">
+        <h2>View All Reservations</h2>
+        <table id="users-table" class="table">
+            <tr>
+                <th>Reservation</th>
+                <th>Checkin Date</th>
+                <th>Checkout Date</th>
+                <th>Room Number</th>
+              
+            </tr>
+            <tr *ngFor="let reservation of reservations">
+                <td>{{reservation.reservationId}}</td>
+                <td>{{reservation.checkin}}</td>
+                <td>{{reservation.checkout}}</td>
+                <td>{{reservation.roomnumber}}</td>
+               
+            </tr>
+        </table>
+    </div>
+</div> -->
+
+<h2> Save Reservation to DB</h2>
+<div class="container">
+    <h2>Save User</h2>
+    <form [formGroup]="reservationForm" id =" new-user" >
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input 
+            formControlName="firstName"
+           
+            name="firstname" 
+            class="form-control" 
+            id="firstname" 
+            type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input
+            formControlName="lastName"
+          
+            name="lastname" 
+            class="form-control" 
+            id="lastname" 
+            type="text"
+            />
+        </div>
+        <div class="form-group">
+            <label for="phonenumber">Phone Number</label>
+            <input 
+            formControlName="phonenumber"
+             
+            name="phonenumber" 
+            class="form-control" 
+            id="number" 
+            type="tel"
+            />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+            formControlName="email"
+           
+            name="email"
+            class="form-control" 
+            id="email" 
+            type="email"
+            />
+
+        </div>
+        <div class="form-group">
+            <label for="roomnumber">Room Number</label>
+            <input 
+            formControlName="roomNumber"
+            
+            name="roomnumber"
+            class="form-control" 
+            id="roomnumber"
+            type="text" 
+            
+            />
+            
+        </div>
+        <div class="form-group">
+            <label for="checkin">Checkin</label>
+            <input 
+            formControlName="checkin"
+              
+            name="date"
+            class="form-control" 
+            id="checkin" 
+            type="date"
+            />
+            
+        </div>
+
+        <div class="form-group">
+            <label for="checkout">Checkout</label>
+            <input 
+            formControlName="checkout"
+            
+            name="Checkout"
+            class="form-control" 
+            id="checkout" 
+            type="date"
+            />
+            
+        </div>
+
+        <div>
+            <button class="btn btn primary submit-button" (click)="postReservations()" > Submit </button>
+        </div>
+    </form>
+
+</div>

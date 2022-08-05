@@ -38,6 +38,7 @@
 
 <app-reservations-list *ngIf="!selectedReservation" [(selectedReservation)]="selectedReservation" [reservations]="resrvationInfoDto" [theReservation]="theReservation"></app-reservations-list>
 
+
 <!-- visible if a reservation has been clicked/selected -->
 <!-- 1. parent theReservation changes when child theReservation is updated and returned -->
 <!-- 2. parent selectedReservation sets the child card's theReservation and selectedReservation -->
