@@ -10,18 +10,22 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
-  
+
+  http:HttpClient;
   private baseURL = environment.apiURL;
   private usersURL = "/users/";
 
-  constructor(private http: HttpClient) { }
+
+  constructor(http: HttpClient) { 
+    this.http = http
+  }
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseURL + this.usersURL);
   }
 
-  postUser(user: User): Observable<User>{
-    return this.http.post<User>(this.baseURL + this.usersURL, user)
+  postUser(user: User): Observable<any>{
+    return this.http.post(this.baseURL + this.usersURL, user)
 
   }
 }

@@ -28,7 +28,7 @@ export class ReservationVudsComponent implements OnInit {
 
   firstName: string = 'Emmanuel';
   lastName: string = 'Amir';
-  phonenumber: string = '123332222';
+  number: string = '123332222';
   email: string = 'yahoboyz@gmail.com';
 
 
@@ -47,7 +47,7 @@ export class ReservationVudsComponent implements OnInit {
       
       lastName: ['', Validators.required],
       
-      phonenumber: ['',Validators.required],
+      number: ['',Validators.required],
       
       email: ['', Validators.required],
       
@@ -80,7 +80,7 @@ export class ReservationVudsComponent implements OnInit {
   postReservations(){
     const reservation = new Reservation(0, 
       new User(0,this.reservationForm.controls['firstName'].value,this.reservationForm.controls['lastName'].value,
-       this.reservationForm.controls['phonenumber'].value,this.reservationForm.controls['email'].value
+       this.reservationForm.controls['number'].value,this.reservationForm.controls['email'].value
         ),this.reservationForm.controls['roomNumber'].value, this.reservationForm.controls['checkin'].value, 
         this.reservationForm.controls['checkout'].value
       );
