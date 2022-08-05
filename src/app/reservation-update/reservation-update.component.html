@@ -5,10 +5,10 @@
         <td><label for="id">Reservation</label></td><td><input id="id" disabled [value]="theReservation.reservationId" /></td>
     </tr>
     <tr>
-        <td><label for="checkin">Checkin Date</label></td><td><input id="checkin" [(ngModel)]="theReservation.checkin" [value]="theReservation.checkin" /></td>
+        <td><label for="checkin">Checkin Date</label></td><td><input type="date" id="checkin" [(ngModel)]="theReservation.checkin" [value]="theReservation.checkin" /></td>
     </tr>
     <tr>
-        <td><label for="checkout">Checkout Date</label></td><td><input id="checkout" [(ngModel)]="theReservation.checkout" [value]="theReservation.checkout" /></td>
+        <td><label for="checkout">Checkout Date</label></td><td><input type="date" id="checkout" [(ngModel)]="theReservation.checkout" [value]="theReservation.checkout" /></td>
     </tr>
     <tr><!-- TODO CHANGE TO ROOMTYPE -->
         <td><label for="roomnumber">Hotel Room</label></td><td><input id="roomnumber" [(ngModel)]="theReservation.roomnumber" [value]="theReservation.roomnumber" /></td>
@@ -17,7 +17,7 @@
         <td><label for="firstName">First Name</label></td><td><input id="firstName" [(ngModel)]="theReservation.firstName" [value]="theReservation.firstName" /></td>
     </tr>
     <tr>
-        <td><label for="lastName">Last Name</label></td><td><input id="lastName" [(ngModel)]="theReservation.firstName" [value]="theReservation.lastName" /></td>
+        <td><label for="lastName">Last Name</label></td><td><input id="lastName" [(ngModel)]="theReservation.lastName" [value]="theReservation.lastName" /></td>
     </tr>
     <tr>
         <td>Email</td><td><input disabled id="email" [(ngModel)]="theReservation.email" [value]="theReservation.email" /></td>
@@ -27,6 +27,6 @@
     </tr>
 </table>
 
-<button (click)="update(theReservation)">Update</button><button (click)="reset()">Cancel</button>
+<button (click)="update(theReservation); returnToView();">Update</button><button (click)="reset()">Cancel</button>
 
 </div>
