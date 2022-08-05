@@ -27,6 +27,7 @@ export class ReservationUpdateComponent implements OnInit {
 
   update(reservation: ResrvationInfoDto) {
     console.log("updating the reservation - hi I'm the reservation update component");
+    console.log("the dates are checking at " + this.theReservation?.checkin + " and checkout at " + this.theReservation?.checkout);
     this.reservationService.updateReservation(reservation).subscribe(data => {this.theReservation = data; console.log(data)});
     this.changeTheReservation.emit(this.theReservation);
   }
