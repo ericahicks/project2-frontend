@@ -26,13 +26,15 @@
     <label for="reservation-id">Reservation Id: </label>
     <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
     <button routerLink="/existing-reservations" (click)="getReservationById(resid.value); resid.value='';clear();" >Submit</button>
-    <button (click)="clear();resid.value='';">Reset</button>
+    <button routerLink="/" (click)="clear();resid.value='';">Reset</button>
 
     <label class="px-3" for="email">Email: </label>
     <input (keyup.enter)="getReservationsByEmail(email.value)" type="text" id="email" #email placeholder="Try msjakeway@yahoo.com">
-    <button (click)="getReservationsByEmail(email.value); email.value='';clear();">Submit</button>
-    <button (click)="clear();email.value='';">Reset</button>
+    <button routerLink="/existing-reservations" (click)="getReservationsByEmail(email.value); email.value='';clear();">Submit</button>
+    <button routerLink="/" (click)="clear();email.value='';">Reset</button>
 </div>
+
+<!-- <router-outlet></router-outlet> -->
 
 <app-reservations-list *ngIf="!selectedReservation" [(selectedReservation)]="selectedReservation" [reservations]="resrvationInfoDto" [theReservation]="theReservation"></app-reservations-list>
 

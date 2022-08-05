@@ -5,6 +5,7 @@ import { ResrvationInfoDto } from '../models/reservation-info-dto';
 import { User } from '../models/user';
 import { ReservationService } from '../reservation.service';
 import { UserService } from '../user.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
 @Component({
   selector: 'app-reservation-vud',
@@ -13,12 +14,17 @@ import { UserService } from '../user.service';
 })
 export class ReservationVudComponent implements OnInit {
 
+  name?: string;
+
   theReservation?: ResrvationInfoDto; // hold reservation found by id
   resrvationInfoDto?: ResrvationInfoDto[]; // holds reservations found by email
   selectedReservation?: ResrvationInfoDto; // holds reservation selected to edit or delete
   users: User[]; // not used, testing purposees only
 
-  constructor(private reservationService: ReservationService, private userService: UserService) { 
+  constructor(private reservationService: ReservationService, 
+               private userService: UserService,
+                private route: ActivatedRoute
+             ) { 
     this.users = []; 
     this.resrvationInfoDto = [];
   }
@@ -26,6 +32,7 @@ export class ReservationVudComponent implements OnInit {
   ngOnInit(): void {
     // this.getUsers();
     // this.getReservations();
+    this.route.queryParams.subscribe(params => this.name = params['name']);
   }
 
   getReservations(): void {
@@ -39,7 +46,7 @@ export class ReservationVudComponent implements OnInit {
 
   getReservationById(id: string): void {
     this.reservationService.getReservationById(id).subscribe(data => this.theReservation = data);
-    console.log(this.theReservation);
+    console.log(this.theReservation); // why is this undefined?
   }
 
   getReservationsByEmail(email: string): void {

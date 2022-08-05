@@ -29,6 +29,7 @@ export class ReservationService {
    }
 
    updateReservation(theReservation: ResrvationInfoDto): Observable<ResrvationInfoDto> {
+    console.log("hi I'm the reservation service - gotcha. updating the reservation");
     return this.http.put<ResrvationInfoDto>(this.baseUrl + this.apiUrl + theReservation.reservationId, theReservation);
    }
 

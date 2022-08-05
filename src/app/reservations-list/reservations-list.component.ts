@@ -1,4 +1,5 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ResrvationInfoDto } from '../models/reservation-info-dto';
 
 @Component({
@@ -12,6 +13,7 @@ export class ReservationsListComponent implements OnInit {
   @Input() reservations?: ResrvationInfoDto[];
   @Input() selectedReservation?: ResrvationInfoDto; // holds reservation selected to edit or delete
   @Output() selectedReservationChange = new EventEmitter<ResrvationInfoDto>();
+  resid?: string;
 
   updatedReservation(reservation: ResrvationInfoDto | undefined) {
     if (reservation) {
@@ -21,9 +23,11 @@ export class ReservationsListComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params =>
+      this.resid = params['resid'])
   }
 
 }
