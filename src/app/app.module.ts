@@ -16,6 +16,7 @@ import { CheckoutForm2Component } from './checkout-form2/checkout-form2.componen
 import { SaveUserComponent } from './save-user/save-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.co
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
