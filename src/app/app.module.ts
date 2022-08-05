@@ -17,7 +17,7 @@ import { SaveUserComponent } from './save-user/save-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ButtonModule,
     BrowserAnimationsModule
   ],
   providers: [],
