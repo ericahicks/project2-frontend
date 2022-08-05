@@ -12,6 +12,7 @@ export class ReservationService {
 
   baseUrl: string = environment.apiURL;
   apiUrl: string = "/reservations"
+  createreservation = "/createreservation"
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,6 @@ export class ReservationService {
       return this.http.get<Reservation[]>(this.baseUrl + this.apiUrl)
    }
    postReservation(reservation:Reservation): Observable<Reservation>{
-    return this.http.post<Reservation>(this.baseUrl + this.apiUrl, reservation)
+    return this.http.post<Reservation>(this.baseUrl + this.apiUrl +this.createreservation, reservation)
    } 
 }

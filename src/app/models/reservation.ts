@@ -1,14 +1,14 @@
 import { User } from "./user";
 
 export class Reservation {
-    reservationId?: number;
-    roomnumber?: number;
-    users?: User;
-    checkin?: Date;
-    checkout?: Date;
+    reservationId: number;
+    roomnumber: string;
+    users: User;
+    checkin: Date;
+    checkout: Date;
 
 
-    constructor (reservationId: number = 0, users: User = new User(), roomnumber: number = 100,
+    constructor (reservationId = 0, users = new User(), roomnumber = '',
                  checkin: Date, checkout: Date) {
         this.reservationId = reservationId;
         this.users = users;
