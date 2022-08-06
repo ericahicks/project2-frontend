@@ -28,22 +28,23 @@ export class ReservationVudComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  showReservations() {
+  showReservations(id: string) {
+    console.log("Hi I'm vud.ts! I have showReservation with id = " + id);
     this.router.navigate(
-      ['/view'], 
-      {queryParams: { id: this.reservationId } } 
+      ['view'], 
+      {queryParams: { id: id } } 
     ); // WILL THIS WORK?
   }
 
   clearReservations() {
-    this.router.navigate(['/reservations']); // WILL THIS WORK?
+    this.router.navigate(['reservations']); // WILL THIS WORK?
   }
 
   findUserAndShowReservations() {
     if (this.userEmail) {
       this.userService.getUserIdByEmail(this.userEmail).subscribe(id => this.userId = id);
       this.router.navigate(
-        ['/view'], 
+        ['view'], 
         {queryParams: { userid: this.userId } } // opening the list view
       ); // WILL THIS WORK?
     } else 

@@ -1,7 +1,20 @@
-<ng-container *ngFor="let theReservation of reservations">
-        <app-reservation-card [reservation]="theReservation" ></app-reservation-card>
+
+<h1>Reservations</h1>
+<button (click)="back()">&larr; Back</button> 
+
+<ng-container
+  *ngIf="reservations; then listReservations; else showError">
 </ng-container>
 
+<ng-template #listReservations>
+<ng-container *ngFor="let theReservation of reservations">
+        <app-reservation-card (click)="openUpdate(theReservation.reservationId)" [reservation]="theReservation" ></app-reservation-card>
+</ng-container>
+
+</ng-template>
+<ng-template #showError>
+<p *ngIf="reservations">No reservations found.</p>
+</ng-template>
 
 
 <!--
@@ -12,4 +25,4 @@
     <app-reservation-card (click)="updatedReservation(theReservation);" (selectedReservation)="selectedReservation" [theReservation]="theReservation"></app-reservation-card>
 
 </ng-container>
--->9
+-->

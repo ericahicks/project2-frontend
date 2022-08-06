@@ -13,6 +13,7 @@ export class ReservationCardComponent implements OnInit {
 
   constructor(private reservationService: ReservationService) { }
 
+
   ngOnInit(): void {
   }
 

@@ -3,8 +3,8 @@
 
 
     <label for="reservation-id">Reservation Number: </label>
-    <input type="text" id="reservation-id" #resid placeholder="Try 19" [(ngModel)]="reservationId">
-    <button (click)="showReservations(); resid.value='';">Submit</button>
+    <input type="text" id="reservation-id" #resid placeholder="Try 19" [(ngModel)]="reservationId" >
+    <button (click)="showReservations(resid.value); resid.value='';">Submit</button>
     <button (click)="clearReservations(); resid.value='';" >Reset</button>
     
     <label for="email">Email: </label>
@@ -17,7 +17,6 @@
 
 
 
-<router-outlet name="subcontent"></router-outlet>
 
 <!-- <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
 
