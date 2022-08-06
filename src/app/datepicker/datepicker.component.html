@@ -1,0 +1,37 @@
+<p>datepicker works!</p>
+
+<!-- Ian' edits (I installed Angular material & angular cdk) 
+
+note this appears to have broken the code.. must try againsave this and the App.ts--> 
+
+<div>
+<mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>Start Date</mat-label>
+    <mat-date-range-input
+      [formGroup]="dateOne"
+      [rangePicker]="dateOnePicker"
+      [comparisonStart]="dateTwo.value.start"
+      [comparisonEnd]="dateTwo.value.end">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="dateOnePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #dateOnePicker></mat-date-range-picker>
+  </mat-form-field>
+  
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>End Date</mat-label>
+    <mat-date-range-input
+      [formGroup]="dateTwo"
+      [rangePicker]="dateTwoPicker"
+      [comparisonStart]="dateOne.value.start"
+      [comparisonEnd]="dateOne.value.end">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="dateTwoPicker"></mat-datepicker-toggle>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-date-range-picker #dateTwoPicker></mat-date-range-picker></mat-form-field>
+</div>
+  

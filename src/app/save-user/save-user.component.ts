@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class SaveUserComponent implements OnInit {
 
-  saveNewUser: User = new User;
+  saveNewUser: User = new User();
 
   
 
@@ -18,8 +18,10 @@ export class SaveUserComponent implements OnInit {
   constructor(private service: UserService) { }
 
   postUser(): void{
+    console.log(this.saveNewUser);
     this.service.postUser(this.saveNewUser).subscribe(data =>{
       console.log(data);
+      this.saveNewUser=data;
     });
   }
 
