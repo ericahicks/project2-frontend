@@ -16,10 +16,6 @@ import { EmailValidator } from '@angular/forms';
 })
 export class ReservationVudComponent implements OnInit {
 
-  reservationId?: string;
-  userEmail?: string;
-  userId: number = 0;
-
   constructor(private reservationService: ReservationService, 
               private userService: UserService,
               private router: Router,
@@ -40,16 +36,19 @@ export class ReservationVudComponent implements OnInit {
     this.router.navigate(['reservations']); // WILL THIS WORK?
   }
 
-  findUserAndShowReservations() {
-    if (this.userEmail) {
-      this.userService.getUserIdByEmail(this.userEmail).subscribe(id => this.userId = id);
-      this.router.navigate(
-        ['view'], 
-        {queryParams: { userid: this.userId } } // opening the list view
+  findUserAndShowReservations(email: string) {
+    console.log("Hi I'm vud.ts! I have findUserAndShowReservations with email = " + email);
+    if (email) {
+      this.userService.getUserIdByEmail(email).subscribe(id => {
+        console.log("db sent back userid of " + id);
+        this.router.navigate(
+          ['view'], 
+          {queryParams: { userid: id } } // opening the list view
       ); // WILL THIS WORK?
-    } else 
+      });
+    } else {
       console.log("no email entered. please enter an email."); // TODO make validation span below input
-    
+    }
   }
 
   // ngOnInit(): void {
