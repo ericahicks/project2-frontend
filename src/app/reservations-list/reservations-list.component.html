@@ -3,17 +3,17 @@
 <button (click)="back()">&larr; Back</button> 
 
 <ng-container
-  *ngIf="reservations; then listReservations; else showError">
+  *ngIf="reservations && reservations.length > 0; then listReservations; else showError">
 </ng-container>
 
 <ng-template #listReservations>
 <ng-container *ngFor="let theReservation of reservations">
-        <app-reservation-card (click)="openUpdate(theReservation.reservationId)" [reservation]="theReservation" ></app-reservation-card>
+        <app-reservation-card (deleteReservationEvent)="removeReservation($event)" (click)="openUpdate(theReservation.reservationId)" [reservation]="theReservation" ></app-reservation-card>
 </ng-container>
 
 </ng-template>
 <ng-template #showError>
-<p *ngIf="reservations">No reservations found.</p>
+<p *ngIf="reservations">No reservations current reservations exist.</p>
 </ng-template>
 
 

@@ -13,6 +13,10 @@ export class ReservationCardComponent implements OnInit {
 
   @Input() reservation?: ResrvationInfoDto;
 
+  @Output() deleteReservationEvent = new EventEmitter<ResrvationInfoDto>();
+
+
+
   constructor(private router: Router,
     private route: ActivatedRoute, 
     private reservationService: ReservationService, 
@@ -22,9 +26,13 @@ export class ReservationCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(id: number): void {
-    this.reservationService.deleteReservation(id);
-
+  delete(event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    if (this.reservation)
+      this.reservationService.deleteReservation(this.reservation.reservationId);
+    // remove the card from the dom
+    this.deleteReservationEvent.emit(this.reservation);
   }
     
   // @Input() theReservation?: ResrvationInfoDto;

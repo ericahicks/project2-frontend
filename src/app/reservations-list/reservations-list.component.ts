@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class ReservationsListComponent implements OnInit {
 
-  reservations?: ResrvationInfoDto[];
+  reservations: ResrvationInfoDto[]; 
   resid: string;
   userid: string;
 
@@ -21,10 +21,10 @@ export class ReservationsListComponent implements OnInit {
               private location: Location) { 
     this.resid = "";
     this.userid = "";
+    this.reservations = [];
   }
 
   ngOnInit(): void {
-    
     this.route.queryParams.subscribe(params => {
       this.resid = params['id'];
       this.userid = params['userid'];
@@ -49,6 +49,10 @@ export class ReservationsListComponent implements OnInit {
 
   back(): void {
     this.location.back();
+  }
+
+  removeReservation(reservation: ResrvationInfoDto) {
+    this.reservations = this.reservations?.filter(data => data.reservationId != reservation.reservationId);
   }
 
 

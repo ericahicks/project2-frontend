@@ -1,6 +1,6 @@
 <div class="card" *ngIf="reservation && reservation.reservationId">
     <div class="btn-group fl-right">
-        <button (click)="delete(reservation.reservationId)">x</button>
+        <button (click)="delete($event)">x</button>
     </div>
 <table class="container">
     <tr>
