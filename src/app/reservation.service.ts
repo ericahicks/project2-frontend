@@ -25,12 +25,16 @@ export class ReservationService {
     return this.http.get<Reservation[]>(this.baseUrl + this.apiUrl)
  }
 
-   getReservationById(id: string): Observable<ResrvationInfoDto> {
+   getReservationById(id: number): Observable<ResrvationInfoDto> {
      return this.http.get<ResrvationInfoDto>(this.baseUrl + this.apiUrl + "/" + id);
    }
 
    getReservationsByEmail(email: string): Observable<ResrvationInfoDto[]> {
     return this.http.post<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl + "/user", email);
+   }
+
+   getReservationsByUserId(userid: number): Observable<ResrvationInfoDto[]> {
+    return this.http.get<ResrvationInfoDto[]>(this.baseUrl + this.apiUrl + "/user/" + userid);
    }
 
    updateReservation(theReservation: ResrvationInfoDto): Observable<ResrvationInfoDto> {

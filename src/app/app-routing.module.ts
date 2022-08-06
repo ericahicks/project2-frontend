@@ -24,9 +24,9 @@ const routes: Routes = [
   },{
     path: 'vuds', component: ReservationVudsComponent // Amir's save reservation to db 
   },{ 
-    path: 'reservations/update', component: ReservationUpdateComponent
+    path: 'reservations/update/:id', outlet: 'subcontent', component: ReservationUpdateComponent
   },{ 
-    path: 'reservations/view',  component: ReservationsListComponent
+    path: 'reservations/view', outlet: 'subcontent', component: ReservationsListComponent
   },{
     path: 'reservations', component: ReservationVudComponent // Erica's view existing reservations
   },{ 

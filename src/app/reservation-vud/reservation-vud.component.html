@@ -1,31 +1,28 @@
-
-<!-- User Table for Testing 
-<div class="testing">
-    <h1>Users Testing CORS Filter</h1>
-    <table id="customers">
-        <tr>
-            <th>Userid</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-        </tr>
-        <tr *ngFor="let user of users">
-            <td>{{user.id}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.phonenumber}}</td>
-        </tr>
-    </table>
-</div>
--->
-
 <div class="res-vud-form">
     <h1>View Existing Reservations</h1>
+
+
     <label for="reservation-id">Reservation Number: </label>
-    <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
-    <button (click)="getReservationById(resid.value); resid.value='';clear();" >Submit</button>
+    <input type="text" id="reservation-id" #resid placeholder="Try 19" [(ngModel)]="reservationId">
+    <button (click)="showReservations(); resid.value='';">Submit</button>
+    <button (click)="clearReservations(); resid.value='';" >Reset</button>
+    
+    <label for="email">Email: </label>
+    <input type="email" id="email" #email placeholder="Try msjakeway@yahoo.com" [(ngModel)]="userEmail"/> 
+    <button (click)="findUserAndShowReservations(); email.value='';">Submit</button>
+    <button (click)="clearReservations(); email.value='';" >Reset</button>
+
+
+</div>
+
+
+
+<router-outlet name="subcontent"></router-outlet>
+
+<!-- <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
+
+    <input type="text" id="reservation-id" #resid placeholder="Try 19">
+    <button [routerLink]="['/reservations/view/{{resid}}']" (click)="getReservationById(resid.value); resid.value='';clear();" >Submit</button>
     <button (click)="clear();resid.value='';">Reset</button>
 
     <label class="px-3" for="email">Email: </label>
@@ -34,13 +31,12 @@
     <button (click)="clear();email.value='';">Reset</button>
 </div>
 
-<!-- <router-outlet></router-outlet> -->
-
 <app-reservations-list *ngIf="!selectedReservation" [(selectedReservation)]="selectedReservation" [reservations]="resrvationInfoDto" [theReservation]="theReservation"></app-reservations-list>
-
+-->
 
 <!-- visible if a reservation has been clicked/selected -->
 <!-- 1. parent theReservation changes when child theReservation is updated and returned -->
 <!-- 2. parent selectedReservation sets the child card's theReservation and selectedReservation -->
-<!-- 3. parent selectedReservation set back to undefined when child finishes update -->
+<!-- 3. parent selectedReservation set back to undefined when child finishes update
 <app-reservation-update *ngIf="selectedReservation" (theReservation)="theReservation" [theReservation]="selectedReservation" (selectedReservation)="selectedReservation"></app-reservation-update>
+ -->

@@ -1,5 +1,15 @@
+<ng-container *ngFor="let theReservation of reservations">
+        <app-reservation-card [reservation]="theReservation" ></app-reservation-card>
+</ng-container>
+
+
+
+<!--
 <app-reservation-card (click)="updatedReservation(theReservation)" (selectedReservation)="selectedReservation" [theReservation]="theReservation"></app-reservation-card>
 
 <ng-container *ngFor="let theReservation of reservations">
-<app-reservation-card (click)="updatedReservation(theReservation);" (selectedReservation)="selectedReservation" [theReservation]="theReservation"></app-reservation-card>
+
+    <app-reservation-card (click)="updatedReservation(theReservation);" (selectedReservation)="selectedReservation" [theReservation]="theReservation"></app-reservation-card>
+
 </ng-container>
+-->9

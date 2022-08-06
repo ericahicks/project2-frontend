@@ -20,6 +20,10 @@ export class UserService {
     return this.http.get<User[]>(this.baseURL + this.usersURL);
   }
 
+  getUserIdByEmail(email: string): Observable<number> { // using post to get bc email in url is weird
+    return this.http.post<number>(this.baseURL + this.usersURL + "/email", email);
+  }
+
   postUser(user: User): Observable<User>{
     return this.http.post<User>(this.baseURL + this.usersURL, user)
 

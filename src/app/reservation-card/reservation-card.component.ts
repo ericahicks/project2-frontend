@@ -9,26 +9,28 @@ import { ReservationService } from '../reservation.service';
 })
 export class ReservationCardComponent implements OnInit {
 
-  
-  
-  @Input() theReservation?: ResrvationInfoDto;
-  @Input() selectedReservation?: ResrvationInfoDto;
-  @Output() changeSelectedReservation = new EventEmitter<ResrvationInfoDto>;
+  @Input() reservation?: ResrvationInfoDto;
 
-  
   constructor(private reservationService: ReservationService) { }
-
-  updatedReservation() {
-      this.selectedReservation = this.theReservation;
-      this.changeSelectedReservation.emit(this.theReservation);
-  }
-
-  deleteReservationById(id: number) {
-    this.reservationService.deleteReservation(id);
-    this.selectedReservation = undefined;
-  }
 
   ngOnInit(): void {
   }
+
+    
+  // @Input() theReservation?: ResrvationInfoDto;
+  // @Input() selectedReservation?: ResrvationInfoDto;
+  // @Output() changeSelectedReservation = new EventEmitter<ResrvationInfoDto>;
+
+  
+  // updatedReservation() {
+  //     this.selectedReservation = this.theReservation;
+  //     this.changeSelectedReservation.emit(this.theReservation);
+  // }
+
+  // deleteReservationById(id: number) {
+  //   this.reservationService.deleteReservation(id);
+  //   this.selectedReservation = undefined;
+  // }
+
 
 }
