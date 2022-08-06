@@ -17,7 +17,12 @@ import { SaveUserComponent } from './save-user/save-user.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {ButtonModule} from 'primeng/button';
+import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from "primeng/sidebar";
+import { InputTextModule } from "primeng/inputtext";
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { ToastModule } from "primeng/toast";
+import { MessageService } from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -40,9 +45,13 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SidebarModule,
+    InputTextModule,
+    InputTextareaModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
