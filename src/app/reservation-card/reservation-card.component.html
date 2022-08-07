@@ -1,28 +1,28 @@
-<div class="card" *ngIf="theReservation && theReservation.reservationId">
+<div class="card" *ngIf="reservation && reservation.reservationId">
     <div class="btn-group fl-right">
-        <button (click)="deleteReservationById(theReservation.reservationId)">x</button>
+        <button (click)="delete($event)">x</button>
     </div>
-<table class="container"  >
+<table class="container">
     <tr>
-        <td>Reservation</td><td>{{theReservation.reservationId}}</td>
+        <td>Reservation</td><td>{{reservation.reservationId}}</td>
     </tr>
     <tr>
-        <td>Checkin Date</td><td>{{theReservation.checkin}}</td>
+        <td>Checkin Date</td><td>{{reservation.checkin}}</td>
     </tr>
     <tr>
-        <td>Checkout Date</td><td>{{theReservation.checkout}}</td>
+        <td>Checkout Date</td><td>{{reservation.checkout}}</td>
     </tr>
     <tr><!-- TODO CHANGE TO ROOMTYPE -->
-        <td>Hotel Room</td><td>{{theReservation.roomnumber}}</td>
+        <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
     </tr>
     <tr>
-        <td>Name</td><td>{{theReservation.firstName}} {{theReservation.lastName}}</td>
+        <td>Name</td><td>{{reservation.firstName}} {{reservation.lastName}}</td>
     </tr>
     <tr>
-        <td>Email</td><td>{{theReservation.email}}</td>
+        <td>Email</td><td>{{reservation.email}}</td>
     </tr>
     <tr>
-        <td>Phone Number</td><td>{{theReservation.phonenumber}}</td>
+        <td>Phone Number</td><td>{{reservation.phonenumber}}</td>
     </tr>
 </table>
 </div>
