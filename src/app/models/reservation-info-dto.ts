@@ -12,7 +12,7 @@ export class ResrvationInfoDto {
 	email: string;
 
     constructor (reservationId: number = 0, roomnumber: number = 100,
-                checkin: Date, checkout: Date, userid: number, firstName: string,
+                checkin: Date, checkout: Date, userid: number = 0, firstName: string,
                 lastName: string, phonenumber: string, email: string) {
         this.reservationId = reservationId;
         this.roomnumber = roomnumber;
