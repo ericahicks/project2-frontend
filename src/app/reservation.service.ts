@@ -66,8 +66,11 @@ export class ReservationService {
       );
    }
 
-   postReservation(reservation:Reservation): Observable<Reservation>{
-    return this.http.post<Reservation>(this.baseUrl + this.apiUrl +this.createreservation, reservation)
+   postReservation(reservation:ResrvationInfoDto): Observable<ResrvationInfoDto>{
+    console.log("Hello I am the Create a New Reservation Service. A new reservation coming right up!")
+    return this.http.post<ResrvationInfoDto>(this.baseUrl + this.apiUrl + "/new" , reservation)
+
+
    } 
 
    private handleError(error: HttpErrorResponse) {

@@ -40,6 +40,7 @@
   .container {
     padding: 16px 16px;
     margin: 16px;
+    color: #1B391E;
   }
   .fl-right {
     float: right;
@@ -49,4 +50,16 @@
 
   .px-3 {
     margin-left: 2em;
+  }
+
+  .card {
+    background-color: #C4D3C8;
+  }
+
+  .xbtn {
+    font-weight: 900;
+  }
+
+  .tdata {
+  padding-left: 48px;
   }

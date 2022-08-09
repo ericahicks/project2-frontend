@@ -1,41 +1,18 @@
+
 <div class="res-vud-form">
     <h1>View Existing Reservations</h1>
 
-
-    <label for="reservation-id">Reservation Number: </label>
-    <input type="text" id="reservation-id" #resid placeholder="Try 91" >
-    <button (click)="showReservations(resid.value); resid.value='';">Submit</button>
-    <button (click)="clearReservations(); resid.value='';" >Reset</button>
+<div class="contents">
+    <label class="floattext" for="reservation-id">Reservation Number: </label>
+    <input class="input" type="text" id="reservation-id" #resid placeholder="Try 19" >
+    <button class="btn" pButton (click)="showReservations(resid.value); resid.value='';">Submit</button>
+    <button class="btn" pButton (click)="clearReservations(); resid.value='';" >Reset</button>
     
-    <label for="email">Email: </label>
-    <input type="email" id="email" #email placeholder="Try cantcliffe@illinoise.edu"/> 
-    <button (click)="findUserAndShowReservations(email.value); email.value='';">Submit</button>
-    <button (click)="clearReservations(); email.value='';" >Reset</button>
-
-
+    <label class="floattext" for="email">Email: </label>
+    <input class="input" type="email" id="email" #email placeholder="Try msjakeway@yahoo.com"/> 
+    <button class="btn" pButton (click)="findUserAndShowReservations(email.value); email.value='';">Submit</button>
+    <button class="btn" pButton (click)="clearReservations(); email.value='';" >Reset</button>
 </div>
 
 
-
-
-<!-- <input (keyup.enter)="getReservationById(resid.value);resid.value='';" type="text" id="reservation-id" #resid placeholder="Try 19">
-
-    <input type="text" id="reservation-id" #resid placeholder="Try 19">
-    <button [routerLink]="['/reservations/view/{{resid}}']" (click)="getReservationById(resid.value); resid.value='';clear();" >Submit</button>
-    <button (click)="clear();resid.value='';">Reset</button>
-
-    <label class="px-3" for="email">Email: </label>
-    <input (keyup.enter)="getReservationsByEmail(email.value)" type="text" id="email" #email placeholder="Try msjakeway@yahoo.com">
-    <button (click)="getReservationsByEmail(email.value); email.value='';clear();">Submit</button>
-    <button (click)="clear();email.value='';">Reset</button>
 </div>
-
-<app-reservations-list *ngIf="!selectedReservation" [(selectedReservation)]="selectedReservation" [reservations]="resrvationInfoDto" [theReservation]="theReservation"></app-reservations-list>
--->
-
-<!-- visible if a reservation has been clicked/selected -->
-<!-- 1. parent theReservation changes when child theReservation is updated and returned -->
-<!-- 2. parent selectedReservation sets the child card's theReservation and selectedReservation -->
-<!-- 3. parent selectedReservation set back to undefined when child finishes update
-<app-reservation-update *ngIf="selectedReservation" (theReservation)="theReservation" [theReservation]="selectedReservation" (selectedReservation)="selectedReservation"></app-reservation-update>
- -->

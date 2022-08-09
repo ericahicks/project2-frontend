@@ -15,6 +15,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 
 .topbar {
     height: 55px;
-    background-color: var(--text-color);
+    background-color: #C3D3C7;
     color: var(--text-color);
+    
   }

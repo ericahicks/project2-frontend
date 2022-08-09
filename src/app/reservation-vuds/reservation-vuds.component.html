@@ -1,3 +1,5 @@
+
+
 <!-- <p>reservation-vuds works!</p>
 <div class="container">
     <p>list-user works!</p>
@@ -22,9 +24,24 @@
     </div>
 </div> -->
 
-<h2> Save Reservation to DB</h2>
+<div class='title'><h2> Save Reservation to DB</h2></div>
+
+<div class="outer_contents">
+<div class="contents">
+
 <div class="container">
-    <form [formGroup]="reservationForm" id =" new-user" >
+    <form [formGroup]="reservationForm"   id = "new-user-reservation" >
+        <!-- <div class="form-group">
+            <label for="userid">User ID</label>
+            <input 
+            formControlName="userid"
+           
+            name="userid" 
+            class="form-control" 
+            id="userid" 
+            type="number"
+            />
+        </div> -->
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input 
@@ -47,10 +64,11 @@
             type="text"
             />
         </div>
+
         <div class="form-group">
             <label for="number">Phone Number</label>
             <input 
-            formControlName="number"
+            formControlName="phoneNumber"
              
             name="number" 
             class="form-control" 
@@ -58,6 +76,7 @@
             type="tel"
             />
         </div>
+
         <div class="form-group">
             <label for="email">Email</label>
             <input 
@@ -68,8 +87,20 @@
             id="email" 
             type="email"
             />
-
         </div>
+            <!-- <div class="form-group">
+                <label for="reservationId">Reservation ID</label>
+                <input 
+                formControlName="reservationId"
+               
+                name="reservationId"
+                class="form-control" 
+                id="reservationId" 
+                type="number"
+                />
+
+        </div> -->
+
         <div class="form-group">
             <label for="roomnumber">Room Number</label>
             <input 
@@ -109,9 +140,11 @@
             
         </div>
 
-        <div>
-            <button class="btn btn primary submit-button" (click)="postReservations()" > Submit </button>
+        <div class="btn">
+            <button class="btn btn primary submit-button" pButton (click)="postReservations()" > Submit </button>
         </div>
     </form>
 
+</div>
+</div>
 </div>

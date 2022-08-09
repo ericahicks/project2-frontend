@@ -1,31 +1,31 @@
+
 <div pTooltip="Click to Edit" tooltipPosition="right" class="card" *ngIf="reservation && reservation.reservationId">
+  <div class="xbtn">
     <div class="btn-group fl-right">
         <button (click)="delete($event)">x</button>
     </div>
+  </div>
 <table class="container">
     <tr>
-        <td>Reservation</td><td>{{reservation.reservationId}}</td>
+        <td>Reservation</td><td class="tdata">{{reservation.reservationId}}</td>
     </tr>
     <tr>
-        <td>Checkin Date</td><td>{{reservation.checkin}}</td>
+        <td>Checkin Date</td><td class="tdata">{{reservation.checkin}}</td>
     </tr>
     <tr>
-        <td>Checkout Date</td><td>{{reservation.checkout}}</td>
-    </tr>
-  <!--   <tr>TODO CHANGE TO ROOMTYPE 
-        <td>Hotel Room</td><td>{{reservation.roomnumber}}</td>
-    </tr>-->
-    <tr>
-        <td>Room Type</td><td>{{reservation.roomTypeName}}</td>
+        <td>Checkout Date</td><td class="tdata">{{reservation.checkout}}</td>
     </tr>
     <tr>
-        <td>Name</td><td>{{reservation.firstName}} {{reservation.lastName}}</td>
+        <td>Room Type</td><td lass="tdata">{{reservation.roomTypeName}}</td>
     </tr>
     <tr>
-        <td>Email</td><td>{{reservation.email}}</td>
+        <td>Name</td><td class="tdata">{{reservation.firstName}} {{reservation.lastName}}</td>
     </tr>
     <tr>
-        <td>Phone Number</td><td>{{reservation.phonenumber}}</td>
+        <td>Email</td><td class="tdata">{{reservation.email}}</td>
+    </tr>
+    <tr>
+        <td>Phone Number</td><td class="tdata">{{reservation.phonenumber}}</td>
     </tr>
 </table>
 </div>

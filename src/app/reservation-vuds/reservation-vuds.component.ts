@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Reservation } from '../models/reservation';
+import { ResrvationInfoDto } from '../models/reservation-info-dto';
 import { User } from '../models/user';
 import { ReservationService } from '../reservation.service';
 import { UserService } from '../user.service';
@@ -18,7 +19,10 @@ export class ReservationVudsComponent implements OnInit {
 
  // reservation = new Reservation();
 
-  reservations: Reservation[] = [];
+  reservations!: ResrvationInfoDto;
+
+
+ 
   //users: User[];
   saveNewUser: User = new User;
 
@@ -34,69 +38,55 @@ export class ReservationVudsComponent implements OnInit {
 
 
   constructor( private formBuilder: FormBuilder,private reservationService: ReservationService, private userService: UserService) { 
-    //this.users = []; 
-    //this.reservations = [];
-   // this.reservation = {};
+    
 
   }
 
   ngOnInit(): void {
     this.reservationForm = this.formBuilder.group({
 
-      firstName: ['', Validators.required],
-      
-      lastName: ['', Validators.required],
-      
-      number: ['',Validators.required],
-      
-      email: ['', Validators.required],
-      
-      roomNumber: ['', Validators.required],
-      
-      checkin: ['', Validators.required],
+      userid: ['',],
 
-      checkout: ['', Validators.required],
+      firstName: ['', ],
+      
+      lastName: ['',],
+      
+      phoneNumber: ['',],
+      
+      email: ['', ],
+
+      reservationId: ['', ],
+      
+      roomNumber: ['', ],
+      
+      checkin: ['', ],
+
+      checkout: ['', ],
       
       });
-
-
-    this.reservationService.getReservations().subscribe((data) =>{
-      this.reservations = data;
-    //  data.forEach(rest=>{
-      //  this.reservationForm.controls['firstName'].setValue(rest.users.firstName)
-      //});
-      //
-      console.log(this.reservations);
-    });
     
-  }
-  // postUsers(): void {
-  //   this.userService.postUser(this.saveNewUser).subscribe(data=>{
-  //     console.log(data);
 
-  //   });
-  // }
+    }
+   
  
   postReservations(){
-    const reservation = new Reservation(0, 
-      new User(0,this.reservationForm.controls['firstName'].value,this.reservationForm.controls['lastName'].value,
-       this.reservationForm.controls['number'].value,this.reservationForm.controls['email'].value
-        ),this.reservationForm.controls['roomNumber'].value, this.reservationForm.controls['checkin'].value, 
-        this.reservationForm.controls['checkout'].value
-      );
-    //this.reservation.users = this.saveNewUser;
+    console.log("Creating Reservation! Hi, I am the Create User Component!")
+
+    const reservation1= new ResrvationInfoDto(this.reservationForm.controls['reservationId'].value,
+    this.reservationForm.controls['roomNumber'].value,
+    this.reservationForm.controls['checkin'].value,this.reservationForm.controls['checkout'].value,
+    this.reservationForm.controls['userid'].value,this.reservationForm.controls['firstName'].value,
+    this.reservationForm.controls['lastName'].value,this.reservationForm.controls['phoneNumber'].value,
+    this.reservationForm.controls['email'].value,)
+  
 
 
-   // this.reservation.roomnumber =this.reservationForm.controls['roomNumber'].value;
+
+ 
    
-    // this.reservation.checkin = this.reservationForm.controls['checkin'].value;
-    // this.reservation.checkout = this.reservationForm.controls['checkout'].value;
-    // this.reservation.users.firstName= this.reservationForm.controls['firstName'].value;
-    // this.reservation.users.lastName= this.reservationForm.controls['lastName'].value;
-    // this.reservation.users.number= this.reservationForm.controls['phonenumber'].value;
-    // this.reservation.users.email=this.reservationForm.controls['email'].value;
-    console.log(reservation);
-   this.reservationService.postReservation(reservation).subscribe(data =>{
+    console.log(this.reservations);
+   this.reservationService.postReservation(reservation1).subscribe(data =>{
+    this.reservations= data;
       console.log(data);
 
     });
