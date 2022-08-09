@@ -77,7 +77,7 @@ export class ReservationVudsComponent implements OnInit {
     this.reservationForm.controls['checkin'].value,this.reservationForm.controls['checkout'].value,
     this.reservationForm.controls['userid'].value,this.reservationForm.controls['firstName'].value,
     this.reservationForm.controls['lastName'].value,this.reservationForm.controls['phoneNumber'].value,
-    this.reservationForm.controls['email'].value,)
+    this.reservationForm.controls['email'].value, 1, "2 Queen Beds Suite", 120);
   
 
 
