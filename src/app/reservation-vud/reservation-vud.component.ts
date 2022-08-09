@@ -45,39 +45,11 @@ export class ReservationVudComponent implements OnInit {
           ['view'], 
           {queryParams: { userid: id } } // opening the list view
       ); // WILL THIS WORK?
-      });
+      }
+      );
     } else {
       console.log("no email entered. please enter an email."); // TODO make validation span below input
     }
   }
-
-  // ngOnInit(): void {
-  //   // this.getReservations();
-  //   this.getReservationById();
-  // }
-
-  
-  // resrvationInfoDto?: ResrvationInfoDto[]; // holds reservations found by email
-  // selectedReservation?: ResrvationInfoDto; // holds reservation selected to edit or delete
-  // users: User[]; // not used, testing purposees only
-
-  // getReservations(): void {
-  //   this.reservationService.getReservationsInfo().subscribe(data => this.resrvationInfoDto = data);
-  // }
-
-  // getReservationById(id: string): void {
-  //   this.reservationService.getReservationById(id).subscribe(data => this.theReservation = data);
-  //   console.log(this.theReservation); // why is this undefined?
-  // }
-
-  // getReservationsByEmail(email: string): void {
-  //   this.reservationService.getReservationsByEmail(email).subscribe(data => this.resrvationInfoDto = data )
-  // }
-
-  // clear() {
-  //   this.resrvationInfoDto = undefined;
-  //   this.theReservation = undefined;
-  //   this.selectedReservation = undefined;
-  // }
 
 }
