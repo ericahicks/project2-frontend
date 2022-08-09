@@ -23,6 +23,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { InputTextareaModule } from "primeng/inputtextarea";
 import { ToastModule } from "primeng/toast";
 import { MessageService } from "primeng/api";
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { MessageService } from "primeng/api";
     SidebarModule,
     InputTextModule,
     InputTextareaModule,
-    ToastModule
+    ToastModule,
+    TooltipModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

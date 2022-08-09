@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-black.css",
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/primeng/resources/themes/vela-green/theme.css",
               "./node_modules/primeng/resources/primeng.min.css",

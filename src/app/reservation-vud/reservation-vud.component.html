@@ -3,12 +3,12 @@
 
 
     <label for="reservation-id">Reservation Number: </label>
-    <input type="text" id="reservation-id" #resid placeholder="Try 19" >
+    <input type="text" id="reservation-id" #resid placeholder="Try 91" >
     <button (click)="showReservations(resid.value); resid.value='';">Submit</button>
     <button (click)="clearReservations(); resid.value='';" >Reset</button>
     
     <label for="email">Email: </label>
-    <input type="email" id="email" #email placeholder="Try msjakeway@yahoo.com"/> 
+    <input type="email" id="email" #email placeholder="Try cantcliffe@illinoise.edu"/> 
     <button (click)="findUserAndShowReservations(email.value); email.value='';">Submit</button>
     <button (click)="clearReservations(); email.value='';" >Reset</button>
 
