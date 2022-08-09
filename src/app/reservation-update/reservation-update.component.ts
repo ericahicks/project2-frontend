@@ -3,6 +3,9 @@ import { ResrvationInfoDto } from '../models/reservation-info-dto';
 import { ReservationService } from '../reservation.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Roomtype } from '../models/roomtype';
+import { RoomtypeService } from '../roomtype.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation-update',
@@ -13,14 +16,21 @@ export class ReservationUpdateComponent implements OnInit {
 
   reservation?: ResrvationInfoDto;
   resid?: string;
+  roomtypes?: Roomtype[];
+  form = new FormGroup({
+    roomtypes: new FormControl(this.roomtypes)
+  })
 
   constructor(private router: Router,
               private route: ActivatedRoute, 
               private reservationService: ReservationService, 
+              private roomtypeService: RoomtypeService,
               private location: Location) { }
 
   ngOnInit(): void {
-    
+
+    this.roomtypeService.getRoomTypes().subscribe(data => this.roomtypes = data);
+
     this.route.queryParams.subscribe(params => {
       this.resid = params['resid'];
     });
@@ -31,6 +41,19 @@ export class ReservationUpdateComponent implements OnInit {
       this.reservationService.getReservationById(Number(this.resid)).subscribe(data => this.reservation = data);
       console.log("    I got the reesrvation from the database! It is " + JSON.stringify(this.reservation));
     } 
+
+    // move the reservation's roomtype to the start of the array
+    // roomtype id is the index
+      console.log(JSON.stringify(this.roomtypes))
+    if (this.reservation && this.roomtypes) {
+      console.log(JSON.stringify(this.roomtypes))
+    const fromIndex = this.reservation!.roomTypeId - 1; // change to 0 offset
+    let element = this.roomtypes[fromIndex];
+    this.roomtypes?.splice(fromIndex, 1); // remove it
+    this.roomtypes?.splice(0, 0, element);
+    console.log(JSON.stringify(this.roomtypes));
+  }
+
 
   }
 
@@ -44,6 +67,7 @@ export class ReservationUpdateComponent implements OnInit {
     else
       console.log("Something went wrong. Sorry, I wasn't able to update the reservation. My bad - update.copmonent.ts");
   }
+
   
   // @Input() theReservation?: ResrvationInfoDto; // is the selected reservation to update
   // @Output() changeTheReservation = new EventEmitter<ResrvationInfoDto>();

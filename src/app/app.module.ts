@@ -24,6 +24,8 @@ import { InputTextareaModule } from "primeng/inputtextarea";
 import { ToastModule } from "primeng/toast";
 import { MessageService } from "primeng/api";
 import {MatCardModule} from '@angular/material/card';
+import {TooltipModule} from 'primeng/tooltip';
+import { SearchComponent } from './search/search.component';
 import { RoomCardComponent } from './room-card/room-card.component';
 
 @NgModule({
@@ -39,7 +41,8 @@ import { RoomCardComponent } from './room-card/room-card.component';
     SaveUserComponent,
     ListUserComponent,
     ReservationVudsComponent,
-    RoomCardComponent
+    RoomCardComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { RoomCardComponent } from './room-card/room-card.component';
     InputTextModule,
     InputTextareaModule,
     ToastModule,
-    MatCardModule
+    MatCardModule,
+    TooltipModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -1,9 +1,10 @@
-<div class="card" *ngIf="reservation && reservation.reservationId">
-    <div class="xbtn">
-        <div class="btn-group fl-right">
-            <button pButton (click)="delete($event)">x</button>
-        </div>
+
+<div pTooltip="Click to Edit" tooltipPosition="right" class="card" *ngIf="reservation && reservation.reservationId">
+  <div class="xbtn">
+    <div class="btn-group fl-right">
+        <button (click)="delete($event)">x</button>
     </div>
+  </div>
 <table class="container">
     <tr>
         <td>Reservation</td><td class="tdata">{{reservation.reservationId}}</td>
@@ -14,8 +15,8 @@
     <tr>
         <td>Checkout Date</td><td class="tdata">{{reservation.checkout}}</td>
     </tr>
-    <tr><!-- TODO CHANGE TO ROOMTYPE -->
-        <td>Hotel Room</td><td class="tdata">{{reservation.roomnumber}}</td>
+    <tr>
+        <td>Room Type</td><td lass="tdata">{{reservation.roomTypeName}}</td>
     </tr>
     <tr>
         <td>Name</td><td class="tdata">{{reservation.firstName}} {{reservation.lastName}}</td>

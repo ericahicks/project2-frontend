@@ -11,9 +11,14 @@ export class ResrvationInfoDto {
 	phonenumber: string;
 	email: string;
 
+    roomTypeId: number;
+    roomTypeName: string;
+    price: number;
+
     constructor (reservationId: number = 0, roomnumber: number = 100,
-                checkin: Date, checkout: Date, userid: number = 0, firstName: string,
-                lastName: string, phonenumber: string, email: string) {
+                checkin: Date, checkout: Date, userid: number, firstName: string,
+                lastName: string, phonenumber: string, email: string, roomTypeId: number, 
+                roomTypeName: string, price: number) {
         this.reservationId = reservationId;
         this.roomnumber = roomnumber;
         this.checkin = checkin;
@@ -23,5 +28,8 @@ export class ResrvationInfoDto {
         this.lastName = lastName;
         this.phonenumber = phonenumber;
         this.email = email;
+        this.roomTypeId = roomTypeId;
+        this.roomTypeName = roomTypeName;
+        this.price = price;
     }
 }
