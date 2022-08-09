@@ -74,3 +74,9 @@
 .input {
   margin: 10px 0;
 }
+
+.contents {
+  width: 1040px;
+  margin-left: 15px;
+  border-radius: 10px;
+}
