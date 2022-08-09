@@ -3,8 +3,37 @@
 }
 
 .contents{
-    margin-left: auto;
+
+    margin-left: 16%;
     margin-right: auto;
-    width: 8em
+    width: 8em;
 }
 
+.container {
+    width: 13em;
+}
+
+.outer_contents {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    background: #C4D3C8;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+
+.form-group {
+    background-color: #1B391E;
+    padding: 13px;
+    border: 6px;
+    border-radius: 3px;
+    border-color: #C4D3C8;
+    border-style: outset;
+    color: white;
+}
+
+.btn {
+    padding: 12px;
+   text-align: center;
+}

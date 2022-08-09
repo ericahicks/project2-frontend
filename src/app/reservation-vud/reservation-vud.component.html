@@ -1,20 +1,20 @@
-<div class="contents">
+
 <div class="res-vud-form">
     <h1>View Existing Reservations</h1>
 
-
-    <label for="reservation-id">Reservation Number: </label>
-    <input type="text" id="reservation-id" #resid placeholder="Try 19" >
-    <button (click)="showReservations(resid.value); resid.value='';">Submit</button>
-    <button (click)="clearReservations(); resid.value='';" >Reset</button>
+<div class="contents">
+    <label class="floattext" for="reservation-id">Reservation Number: </label>
+    <input class="input" type="text" id="reservation-id" #resid placeholder="Try 19" >
+    <button class="btn" pButton (click)="showReservations(resid.value); resid.value='';">Submit</button>
+    <button class="btn" pButton (click)="clearReservations(); resid.value='';" >Reset</button>
     
-    <label for="email">Email: </label>
-    <input type="email" id="email" #email placeholder="Try msjakeway@yahoo.com"/> 
-    <button (click)="findUserAndShowReservations(email.value); email.value='';">Submit</button>
-    <button (click)="clearReservations(); email.value='';" >Reset</button>
-
-
+    <label class="floattext" for="email">Email: </label>
+    <input class="input" type="email" id="email" #email placeholder="Try msjakeway@yahoo.com"/> 
+    <button class="btn" pButton (click)="findUserAndShowReservations(email.value); email.value='';">Submit</button>
+    <button class="btn" pButton (click)="clearReservations(); email.value='';" >Reset</button>
 </div>
+
+
 
 
 

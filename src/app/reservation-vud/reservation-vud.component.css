@@ -51,3 +51,26 @@
     margin-left: 2em;
   }
 
+.contents {
+  background-color: #C4D3C8;
+  color: #1D5A2C;
+  width: 90%;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 8px;
+}
+
+.floattext {
+  padding: 10px 0;
+  margin-left: 24px;
+  margin-right: 12px;
+}
+
+.btn {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.input {
+  margin: 10px 0;
+}

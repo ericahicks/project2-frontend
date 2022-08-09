@@ -26,8 +26,9 @@
 
 <div class='title'><h2> Save Reservation to DB</h2></div>
 
-
+<div class="outer_contents">
 <div class="contents">
+
 <div class="container">
     <form [formGroup]="reservationForm"   id = "new-user-reservation" >
         <!-- <div class="form-group">
@@ -139,10 +140,11 @@
             
         </div>
 
-        <div>
-            <button class="btn btn primary submit-button" (click)="postReservations()" > Submit </button>
+        <div class="btn">
+            <button class="btn btn primary submit-button" pButton (click)="postReservations()" > Submit </button>
         </div>
     </form>
 
+</div>
 </div>
 </div>
