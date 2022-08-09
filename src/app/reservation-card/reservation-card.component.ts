@@ -34,7 +34,9 @@ export class ReservationCardComponent implements OnInit {
     if (this.reservation) {
       console.log("Hi, I'm the card.component. I see there is a reservation you'd like to delete. I'm going to tell the db. id = " + this.reservation.reservationId + " correct?");
       this.reservationService.deleteReservation(this.reservation.reservationId)
-      .subscribe(data => console.log(JSON.stringify(data)));
+      .subscribe(data => {
+        console.log(JSON.stringify(data)); 
+        alert("Your reservation has been canceled. All reservations are nonrefundable. Thank you and have a nice day.");});
     }
     // remove the card from the dom
     this.deleteReservationEvent.emit(this.reservation);
