@@ -1,6 +1,6 @@
 
 <h1>Reservations</h1>
-<button (click)="back()">&larr; Back</button> 
+<button pButton  (click)="back()">&larr; Back</button> 
 
 <ng-container
   *ngIf="reservations && reservations.length > 0; then listReservations; else showError">
