@@ -25,7 +25,7 @@
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 30em;
+    width: 40%;
     border-radius: 5px;
   }
 
@@ -58,16 +58,6 @@
 
   .xbtn {
     font-weight: 900;
-  }
-
-  .btn-white {
-    border: none;
-    border-radius: 3px;
-  }
-
-  .btn-white:hover {
-    background-color: #ffd8e9;
-    color: red;
   }
 
   .tdata {

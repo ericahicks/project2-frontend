@@ -2,7 +2,7 @@
 <div pTooltip="Click to Edit" tooltipPosition="right" class="card" *ngIf="reservation && reservation.reservationId">
   <div class="xbtn">
     <div class="btn-group fl-right">
-        <button pTooltip="Cancel Reservation" class="btn-white" (click)="delete($event)">&#x2715;</button>
+        <button (click)="delete($event)">x</button>
     </div>
   </div>
 <table class="container">
@@ -16,7 +16,7 @@
         <td>Checkout Date</td><td class="tdata">{{reservation.checkout}}</td>
     </tr>
     <tr>
-        <td>Room Type</td><td class="tdata">{{reservation.roomTypeName}}</td>
+        <td>Room Type</td><td lass="tdata">{{reservation.roomTypeName}}</td>
     </tr>
     <tr>
         <td>Name</td><td class="tdata">{{reservation.firstName}} {{reservation.lastName}}</td>

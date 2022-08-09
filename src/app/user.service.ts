@@ -25,19 +25,12 @@ export class UserService {
   }
 
   getUserIdByEmail(email: string): Observable<number> { // using post to get bc email in url is weird
-    return this.http.post<number>(this.baseURL + this.usersURL + "email", email).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.post<number>(this.baseURL + this.usersURL + "email", email);
   }
   
   postUser(user: User): Observable<any>{
     return this.http.post(this.baseURL + this.usersURL, user)
 
-  }
-
-  private handleError(error: HttpErrorResponse) {
-    // no user found with that email so return 0 in an observable
-    return of(0);
   }
 }
 

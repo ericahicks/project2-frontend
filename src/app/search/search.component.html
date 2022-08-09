@@ -1,16 +1,1 @@
-<h1>Book a Hotel Room</h1>
-
-<div>
-   
-
-    <label for="checkin">Checkin Date</label><input type="date" id="checkin" [(ngModel)]="searchby.checkin" />
-
-    <label for="checkout">Checkout Date</label><input type="date" id="checkout" [(ngModel)]="searchby.checkout" />
-
-    <button class="btn" pButton (click)="onSubmit()">Submit</button>
-
-    <ng-container *ngIf="types">
-        <app-room-card class="container" *ngFor="let type of types"></app-room-card>
-    </ng-container>
-
-</div>
+<p>search works!</p>
