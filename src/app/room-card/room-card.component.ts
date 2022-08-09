@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ResrvationInfoDto } from '../models/reservation-info-dto';
-import { Roomtype } from '../models/roomtype';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-room-card',
@@ -12,7 +10,6 @@ export class RoomCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

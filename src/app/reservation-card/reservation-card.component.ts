@@ -39,6 +39,21 @@ export class ReservationCardComponent implements OnInit {
     // remove the card from the dom
     this.deleteReservationEvent.emit(this.reservation);
   }
+    
+  // @Input() theReservation?: ResrvationInfoDto;
+  // @Input() selectedReservation?: ResrvationInfoDto;
+  // @Output() changeSelectedReservation = new EventEmitter<ResrvationInfoDto>;
+
+  
+  // updatedReservation() {
+  //     this.selectedReservation = this.theReservation;
+  //     this.changeSelectedReservation.emit(this.theReservation);
+  // }
+
+  // deleteReservationById(id: number) {
+  //   this.reservationService.deleteReservation(id);
+  //   this.selectedReservation = undefined;
+  // }
 
 
 }
