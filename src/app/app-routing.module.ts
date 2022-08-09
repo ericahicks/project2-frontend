@@ -12,6 +12,7 @@ import { ReservationVudsComponent } from './reservation-vuds/reservation-vuds.co
 import { SaveUserComponent } from './save-user/save-user.component';
 import { ReservationVudComponent } from './reservation-vud/reservation-vud.component';
 import { RoomCardComponent } from './room-card/room-card.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,8 @@ const routes: Routes = [
     path: 'reservations', component: ReservationVudComponent // Erica's view existing reservations
   },{
     path: 'checkout', component: CheckoutFormComponent
+  },{
+    path: 'search', component: SearchComponent
   }
 
 ];

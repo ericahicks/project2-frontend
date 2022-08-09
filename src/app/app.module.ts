@@ -27,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
 import {TooltipModule} from 'primeng/tooltip';
 import { SearchComponent } from './search/search.component';
 import { RoomCardComponent } from './room-card/room-card.component';
+import { RoomtypeCardComponent } from './roomtype-card/roomtype-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RoomCardComponent } from './room-card/room-card.component';
     ListUserComponent,
     ReservationVudsComponent,
     RoomCardComponent,
-    SearchComponent
+    SearchComponent,
+    RoomtypeCardComponent
   ],
   imports: [
     BrowserModule,
