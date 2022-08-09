@@ -88,6 +88,7 @@ export class ReservationVudsComponent implements OnInit {
    this.reservationService.postReservation(reservation1).subscribe(data =>{
     this.reservations= data;
       console.log(data);
+      alert("Your reservation has been Created. Thank you for booking with us, we hope you enjoy your stay! :-)")
 
     });
   }
