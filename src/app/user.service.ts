@@ -21,7 +21,7 @@ export class UserService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.baseURL + this.usersURL);
+    return this.http.get<User[]>(this.baseURL + this.usersURL + "all");
   }
 
   getUserIdByEmail(email: string): Observable<number> { // using post to get bc email in url is weird
