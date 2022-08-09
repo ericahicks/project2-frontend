@@ -24,6 +24,8 @@ import { InputTextareaModule } from "primeng/inputtextarea";
 import { ToastModule } from "primeng/toast";
 import { MessageService } from "primeng/api";
 import {TooltipModule} from 'primeng/tooltip';
+import { SearchComponent } from './search/search.component';
+import { RoomCardComponent } from './room-card/room-card.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import {TooltipModule} from 'primeng/tooltip';
     SaveUserComponent,
     ListUserComponent,
     ReservationVudsComponent,
+    SearchComponent,
+    RoomCardComponent,
   ],
   imports: [
     BrowserModule,
